@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "dpT5ymmLhal0cHB8kC19D"
+uri = "file://artifacts/herrelaunch/src/assets/hero.png"
+type = "image"
+title = "Woman looking out sunlit window"
+
+[[generated]]
+id = "2aownar1V54HGb-CG-udo"
+uri = "file://artifacts/herrelaunch/src/assets/community.png"
+type = "image"
+title = "Women in a circle talking"
+
+[[generated]]
+id = "JsQIIZBO8rDCMObDRnypm"
+uri = "file://artifacts/herrelaunch/src/assets/workshop.png"
+type = "image"
+title = "Hands holding journal and pen"
+
+[[generated]]
+id = "CWRtGQ2LVaTstPMOPQ5rh"
+uri = "file://artifacts/herrelaunch/src/assets/testimonial.png"
+type = "image"
+title = "Woman smiling warmly"
