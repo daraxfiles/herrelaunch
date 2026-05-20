@@ -41,6 +41,9 @@ export function Nav() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
+            <Link href="/about" className={`text-sm font-medium transition-colors ${location === "/about" ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
+              About Us
+            </Link>
             <Link href="/approach" className={`text-sm font-medium transition-colors ${location === "/approach" ? "text-primary" : "text-foreground/80 hover:text-primary"}`}>
               Our Approach
             </Link>
@@ -68,6 +71,9 @@ export function Nav() {
         {/* Mobile Nav */}
         {isMobileMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 bg-background border-b border-border shadow-lg py-4 px-6 flex flex-col gap-4">
+            <Link href="/about" onClick={closeMenu} className="text-left text-lg font-serif text-foreground py-2 border-b border-border/50">
+              About Us
+            </Link>
             <Link href="/approach" onClick={closeMenu} className="text-left text-lg font-serif text-foreground py-2 border-b border-border/50">
               Our Approach
             </Link>

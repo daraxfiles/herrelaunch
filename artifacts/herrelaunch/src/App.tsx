@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
+import About from "@/pages/about";
 import Approach from "@/pages/approach";
 import Workshops from "@/pages/workshops";
 import Community from "@/pages/community";
@@ -31,6 +32,7 @@ function Router() {
         <AnimatePresence mode="wait">
           <Switch location={location} key={location}>
             <Route path="/" component={Home} />
+            <Route path="/about" component={About} />
             <Route path="/approach" component={Approach} />
             <Route path="/workshops" component={Workshops} />
             <Route path="/community" component={Community} />
