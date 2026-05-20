@@ -5,22 +5,22 @@ outputs = []
 id = "dpT5ymmLhal0cHB8kC19D"
 uri = "file://artifacts/herrelaunch/src/assets/hero.png"
 type = "image"
-title = "Confident Black woman near window"
+title = "Black African woman candid portrait"
 
 [[generated]]
 id = "2aownar1V54HGb-CG-udo"
 uri = "file://artifacts/herrelaunch/src/assets/community.png"
 type = "image"
-title = "Diverse women in circle"
+title = "Three Black African women workshop"
 
 [[generated]]
 id = "JsQIIZBO8rDCMObDRnypm"
 uri = "file://artifacts/herrelaunch/src/assets/workshop.png"
 type = "image"
-title = "Two women at laptop"
+title = "Two Black African women collaborating"
 
 [[generated]]
 id = "CWRtGQ2LVaTstPMOPQ5rh"
 uri = "file://artifacts/herrelaunch/src/assets/testimonial.png"
 type = "image"
-title = "Confident white woman portrait"
+title = "Smiling Black African woman portrait"

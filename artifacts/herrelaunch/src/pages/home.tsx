@@ -4,6 +4,7 @@ import { ArrowRight, Users, Calendar, Heart } from "lucide-react";
 import { Link } from "wouter";
 import heroImg from "@/assets/hero.png";
 import communityImg from "@/assets/community.png";
+
 import { Button } from "@/components/ui/button";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
 
@@ -184,14 +185,14 @@ export default function Home() {
                   Join the interest list, request a workshop for your organization, or inquire about how we can support your community. Everything we offer is free — because every woman deserves access to the tools that help her lead.
                 </motion.p>
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/join">
+                  <Link href="/get-involved">
                     <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105">
                       Join the Interest List
                     </Button>
                   </Link>
-                  <Link href="/workshops">
+                  <Link href="/programs">
                     <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-base h-auto border-primary/30 text-primary hover:bg-primary hover:text-white w-full sm:w-fit transition-all">
-                      View Workshops
+                      View Programs
                     </Button>
                   </Link>
                 </motion.div>

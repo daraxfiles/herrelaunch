@@ -7,10 +7,10 @@ import { AnimatePresence } from "framer-motion";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
 import About from "@/pages/about";
+import Programs from "@/pages/programs";
 import Approach from "@/pages/approach";
-import Workshops from "@/pages/workshops";
-import Community from "@/pages/community";
-import Join from "@/pages/join";
+import GetInvolved from "@/pages/get-involved";
+import Contact from "@/pages/contact";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { useEffect } from "react";
@@ -19,8 +19,7 @@ const queryClient = new QueryClient();
 
 function Router() {
   const [location] = useLocation();
-  
-  // Scroll to top on route change
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -33,10 +32,10 @@ function Router() {
           <Switch location={location} key={location}>
             <Route path="/" component={Home} />
             <Route path="/about" component={About} />
+            <Route path="/programs" component={Programs} />
             <Route path="/approach" component={Approach} />
-            <Route path="/workshops" component={Workshops} />
-            <Route path="/community" component={Community} />
-            <Route path="/join" component={Join} />
+            <Route path="/get-involved" component={GetInvolved} />
+            <Route path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
         </AnimatePresence>
