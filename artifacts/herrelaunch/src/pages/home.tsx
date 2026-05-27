@@ -1,36 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Users, Calendar, Heart } from "lucide-react";
 import { Link } from "wouter";
+import { BookOpen, MessageSquare, Users, Star, CheckCircle2 } from "lucide-react";
 import heroImg from "@/assets/hero.png";
 import communityImg from "@/assets/community.png";
-
 import { Button } from "@/components/ui/button";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
 
-const stats = [
-  { label: "Cohorts Per Year", value: "3" },
-  { label: "Weeks Per Cohort", value: "6" },
-  { label: "Sessions Per Week", value: "2×" },
-  { label: "Minutes Per Session", value: "90" },
-];
-
-const snapshots = [
+const offerings = [
   {
-    icon: Heart,
-    title: "Our Mission",
-    body: "We help women worldwide rebuild confidence, practice self-advocacy, and pursue leadership roles through free online workshops.",
+    icon: BookOpen,
+    title: "Confidence Building",
+    desc: "Evidence-based frameworks to help you rebuild your inner voice and lead from a place of strength.",
+  },
+  {
+    icon: MessageSquare,
+    title: "Self-Advocacy",
+    desc: "Learn the language and posture to speak up for yourself in every room that matters.",
   },
   {
     icon: Users,
-    title: "Who We Serve",
-    body: "Women of all backgrounds who want to relaunch their confidence, voice, and leadership potential.",
+    title: "Leadership Development",
+    desc: "Practical skills that translate directly into life, work, and service — starting now.",
   },
-  {
-    icon: Calendar,
-    title: "How It Works",
-    body: "Three cohorts per year, 6 weeks each, twice a week for 90 minutes — entirely online and always free.",
-  },
+];
+
+const stats = [
+  { value: "3", label: "Cohorts / Year" },
+  { value: "6", label: "Weeks Each" },
+  { value: "2×", label: "Weekly Sessions" },
+  { value: "Free", label: "Always" },
 ];
 
 export default function Home() {
@@ -38,112 +37,93 @@ export default function Home() {
     <PageTransition>
       <div className="flex flex-col min-h-screen">
 
-        {/* Hero Section */}
-        <section className="relative min-h-[92vh] flex items-center pt-20 pb-16 overflow-hidden">
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10 z-10" />
+        {/* ─── SPLIT HERO ─────────────────────────────────────────── */}
+        <section className="min-h-[92vh] grid md:grid-cols-2">
+          {/* Left — Photo */}
+          <motion.div
+            initial={{ opacity: 0, scale: 1.04 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative overflow-hidden order-2 md:order-1 h-72 md:h-auto"
+          >
             <img
               src={heroImg}
-              alt="Confident woman stepping forward"
-              className="w-full h-full object-cover object-center"
+              alt="Confident Black African woman"
+              className="absolute inset-0 w-full h-full object-cover object-top"
             />
-          </div>
+            {/* right-side fade so it blends into the dark panel on desktop */}
+            <div className="absolute inset-y-0 right-0 w-1/3 bg-gradient-to-l from-primary/90 to-transparent hidden md:block" />
+          </motion.div>
 
-          <div className="container relative z-10 px-6 md:px-12 mx-auto">
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={staggerContainer}
-              className="max-w-2xl"
-            >
-              <motion.span variants={fadeInUp} className="inline-block text-secondary font-semibold tracking-widest uppercase text-xs mb-6 border border-secondary/30 rounded-full px-4 py-1.5">
-                Free Online Workshops for Women
-              </motion.span>
+          {/* Right — Dark panel */}
+          <div className="bg-primary flex items-center order-1 md:order-2">
+            <div className="px-10 md:px-14 lg:px-20 py-20 md:py-0">
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={staggerContainer}
+                className="max-w-lg"
+              >
+                <motion.span variants={fadeInUp} className="inline-block text-secondary font-semibold tracking-widest uppercase text-xs mb-6 border border-secondary/40 rounded-full px-4 py-1.5">
+                  Free Online Workshops
+                </motion.span>
 
-              <motion.h1 variants={fadeInUp} className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.05] mb-6 tracking-tight">
-                Regain Your Momentum.{" "}
-                <span className="text-primary italic">Lead With Confidence.</span>
-              </motion.h1>
+                <motion.h1 variants={fadeInUp} className="text-4xl md:text-5xl lg:text-6xl font-serif text-primary-foreground leading-[1.1] mb-6 tracking-tight">
+                  Regain Your Momentum.{" "}
+                  <span className="text-secondary italic">Lead With Confidence.</span>
+                </motion.h1>
 
-              <motion.p variants={fadeInUp} className="text-lg md:text-xl text-foreground/80 mb-10 max-w-xl leading-relaxed">
-                HerRelaunch LLC offers free, online Confidence Workshops that help women rebuild self-advocacy, strengthen leadership presence, and take bold next steps in life, work, and service.
-              </motion.p>
+                <motion.p variants={fadeInUp} className="text-lg text-primary-foreground/75 leading-relaxed mb-10">
+                  HerRelaunch LLC offers free, online Confidence Workshops that help women rebuild self-advocacy, strengthen leadership presence, and take bold next steps in life, work, and service.
+                </motion.p>
 
-              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                <Link href="/join">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105 shadow-md shadow-secondary/20">
-                    Join a Workshop
-                  </Button>
-                </Link>
-                <Link href="/approach">
-                  <Button variant="ghost" size="lg" className="rounded-full px-8 py-6 text-base h-auto hover:bg-primary/5 text-primary w-full sm:w-fit border border-primary/20 transition-all hover:border-primary/50">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/join#contact">
-                  <Button variant="ghost" size="lg" className="rounded-full px-8 py-6 text-base h-auto hover:bg-foreground/5 text-foreground/70 w-full sm:w-fit transition-all">
-                    Contact Us
-                  </Button>
-                </Link>
-              </motion.div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Stats Bar */}
-        <section className="bg-primary text-primary-foreground py-10">
-          <div className="container mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, duration: 0.6 }}
-                >
-                  <p className="text-4xl md:text-5xl font-serif font-bold text-secondary mb-1">{stat.value}</p>
-                  <p className="text-sm text-primary-foreground/70 uppercase tracking-wider">{stat.label}</p>
+                <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/get-involved">
+                    <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold rounded-md px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105 shadow-lg shadow-secondary/30">
+                      Launch Your Journey
+                    </Button>
+                  </Link>
+                  <Link href="/programs">
+                    <Button variant="ghost" size="lg" className="rounded-md px-8 py-6 text-base h-auto text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10 w-full sm:w-fit border border-primary-foreground/20 transition-all">
+                      View Programs
+                    </Button>
+                  </Link>
                 </motion.div>
-              ))}
+              </motion.div>
             </div>
           </div>
         </section>
 
-        {/* Mission / Who We Serve / How It Works */}
-        <section className="py-24 md:py-32 bg-background">
+        {/* ─── WHAT WE OFFER ──────────────────────────────────────── */}
+        <section className="py-20 md:py-28 bg-background">
           <div className="container mx-auto px-6 md:px-12">
             <motion.div
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true }}
               variants={staggerContainer}
-              className="text-center mb-16"
+              className="text-center mb-14"
             >
-              <motion.span variants={fadeInUp} className="text-secondary font-semibold tracking-widest uppercase text-xs">
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground">
                 What We Offer
-              </motion.span>
-              <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-serif text-foreground mt-4 max-w-2xl mx-auto leading-tight">
-                A space built for your relaunch
               </motion.h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-              {snapshots.map((item, i) => (
+            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+              {offerings.map((item, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 40 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.15, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="group"
+                  transition={{ delay: i * 0.12, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <div className="rounded-2xl border border-border/50 bg-card p-8 md:p-10 h-full hover:shadow-xl hover:border-primary/20 transition-all duration-500 hover:-translate-y-1">
-                    <div className="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary/20 transition-colors duration-300">
-                      <item.icon className="h-6 w-6 text-secondary" />
+                  <div className="bg-primary rounded-xl p-8 md:p-10 h-full flex flex-col items-center text-center group hover:bg-primary/90 transition-colors duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20 transition-all">
+                    <div className="w-14 h-14 rounded-full bg-secondary/20 flex items-center justify-center mb-5 group-hover:bg-secondary/30 transition-colors">
+                      <item.icon className="h-7 w-7 text-secondary" />
                     </div>
-                    <h3 className="text-xl font-serif text-foreground mb-3">{item.title}</h3>
-                    <p className="text-foreground/70 leading-relaxed">{item.body}</p>
+                    <h3 className="text-xl font-serif text-primary-foreground mb-3">{item.title}</h3>
+                    <p className="text-primary-foreground/70 text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -151,22 +131,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Community Image + CTA Section */}
-        <section className="py-24 md:py-32 bg-accent/20 overflow-hidden">
+        {/* ─── STATS BAR ──────────────────────────────────────────── */}
+        <section className="py-14 bg-secondary/10 border-y border-secondary/20">
+          <div className="container mx-auto px-6 md:px-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+              {stats.map((s, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, duration: 0.55 }}
+                >
+                  <p className="text-4xl md:text-5xl font-serif font-bold text-primary mb-1">{s.value}</p>
+                  <p className="text-sm text-foreground/60 uppercase tracking-wider">{s.label}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ─── COMMUNITY STRIP ────────────────────────────────────── */}
+        <section className="py-24 md:py-32 bg-background">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -40 }}
+                initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                className="relative"
+                className="rounded-2xl overflow-hidden aspect-[4/3]"
               >
-                <div className="aspect-[4/3] rounded-2xl overflow-hidden">
-                  <img src={communityImg} alt="Women in a workshop community" className="w-full h-full object-cover" />
-                </div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-2xl -z-10" />
-                <div className="absolute -top-6 -left-6 w-48 h-48 bg-primary/10 rounded-full blur-3xl -z-10" />
+                <img src={communityImg} alt="Women in community workshop" className="w-full h-full object-cover" />
               </motion.div>
 
               <motion.div
@@ -176,28 +172,72 @@ export default function Home() {
                 variants={staggerContainer}
               >
                 <motion.span variants={fadeInUp} className="text-secondary font-semibold tracking-widest uppercase text-xs">
-                  Ready to Begin?
+                  Who We Serve
                 </motion.span>
                 <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-serif text-foreground mt-4 mb-6 leading-tight">
-                  Your next chapter starts here.
+                  Women ready to speak up, lead, and relaunch.
                 </motion.h2>
-                <motion.p variants={fadeInUp} className="text-lg text-foreground/70 leading-relaxed mb-8">
-                  Join the interest list, request a workshop for your organization, or inquire about how we can support your community. Everything we offer is free — because every woman deserves access to the tools that help her lead.
-                </motion.p>
+                <motion.div variants={fadeInUp} className="space-y-3 mb-8">
+                  {[
+                    "Women of all backgrounds worldwide",
+                    "Those navigating major life transitions",
+                    "Women stepping into leadership roles",
+                    "Anyone ready for their next chapter",
+                  ].map((line, i) => (
+                    <div key={i} className="flex items-center gap-3 text-foreground/70">
+                      <CheckCircle2 className="h-5 w-5 text-secondary shrink-0" />
+                      <span>{line}</span>
+                    </div>
+                  ))}
+                </motion.div>
                 <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/get-involved">
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105">
-                      Join the Interest List
+                  <Link href="/about">
+                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-md px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105">
+                      Our Story
                     </Button>
                   </Link>
-                  <Link href="/programs">
-                    <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-base h-auto border-primary/30 text-primary hover:bg-primary hover:text-white w-full sm:w-fit transition-all">
-                      View Programs
+                  <Link href="/get-involved">
+                    <Button variant="outline" size="lg" className="rounded-md px-8 py-6 text-base h-auto border-primary/30 text-primary hover:bg-primary hover:text-white w-full sm:w-fit transition-all">
+                      Get Involved
                     </Button>
                   </Link>
                 </motion.div>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* ─── BOTTOM CTA ─────────────────────────────────────────── */}
+        <section className="py-20 bg-primary text-primary-foreground text-center">
+          <div className="container mx-auto px-6 md:px-12 max-w-2xl">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={staggerContainer}
+            >
+              <motion.div variants={fadeInUp} className="flex justify-center mb-6">
+                <Star className="h-8 w-8 text-secondary" />
+              </motion.div>
+              <motion.h2 variants={fadeInUp} className="text-4xl md:text-5xl font-serif mb-4 leading-tight">
+                Your next chapter starts here.
+              </motion.h2>
+              <motion.p variants={fadeInUp} className="text-primary-foreground/75 text-lg mb-10 leading-relaxed">
+                Join the interest list, request a workshop, or inquire about support. Everything is free — because every woman deserves the tools to lead.
+              </motion.p>
+              <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/get-involved">
+                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold rounded-md px-8 py-6 text-base h-auto w-full sm:w-fit transition-all hover:scale-105">
+                    Join the Interest List
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button variant="outline" size="lg" className="rounded-md px-8 py-6 text-base h-auto border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 w-full sm:w-fit transition-all">
+                    Contact Us
+                  </Button>
+                </Link>
+              </motion.div>
+            </motion.div>
           </div>
         </section>
 
