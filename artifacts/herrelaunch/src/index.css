@@ -58,51 +58,51 @@
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
 
-  /* Warm off-white/cream */
-  --background: 40 40% 98%;
-  
-  /* Deep teal/charcoal */
-  --foreground: 193 44% 18%;
+  /* Warm off-white */
+  --background: 270 20% 99%;
+
+  /* Deep purple-tinted near-black */
+  --foreground: 270 30% 12%;
 
   /* Muted borders */
-  --border: 40 25% 85%;
+  --border: 270 15% 88%;
 
-  /* Slightly darker cream for cards */
-  --card: 40 35% 96%;
-  --card-foreground: 193 44% 18%;
-  --card-border: 40 25% 90%;
+  /* Slightly off-white card */
+  --card: 270 20% 97%;
+  --card-foreground: 270 30% 12%;
+  --card-border: 270 15% 91%;
 
   /* Popover */
-  --popover: 40 40% 98%;
-  --popover-foreground: 193 44% 18%;
-  --popover-border: 40 25% 90%;
+  --popover: 270 20% 99%;
+  --popover-foreground: 270 30% 12%;
+  --popover-border: 270 15% 91%;
 
-  /* Primary: Dark Teal (#2A5F6E) */
-  --primary: 193 45% 30%;
-  --primary-foreground: 40 40% 98%;
+  /* Primary: Royal Purple */
+  --primary: 270 60% 42%;
+  --primary-foreground: 270 20% 99%;
 
-  /* Secondary: Warm Terracotta (#C0674A) */
-  --secondary: 15 50% 52%;
-  --secondary-foreground: 40 40% 98%;
+  /* Secondary: Gold */
+  --secondary: 43 75% 45%;
+  --secondary-foreground: 43 20% 10%;
 
   /* Muted */
-  --muted: 40 25% 90%;
-  --muted-foreground: 193 20% 40%;
+  --muted: 270 15% 92%;
+  --muted-foreground: 270 20% 45%;
 
-  /* Accent: Light coral/blush */
-  --accent: 15 40% 90%;
-  --accent-foreground: 15 50% 40%;
+  /* Accent: Soft lavender */
+  --accent: 270 40% 93%;
+  --accent-foreground: 270 50% 40%;
 
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --input: 40 25% 85%;
-  --ring: 193 45% 30%;
+  --input: 270 15% 88%;
+  --ring: 270 60% 42%;
 
   --app-font-sans: 'Plus Jakarta Sans', sans-serif;
   --app-font-serif: 'Playfair Display', serif;
   --app-font-mono: Menlo, monospace;
-  --radius: 0.5rem; 
+  --radius: 0.5rem;
 
   --sidebar-primary-border: hsl(var(--primary));
   --sidebar-accent-border: hsl(var(--accent));
@@ -114,27 +114,27 @@
 }
 
 .dark {
-  --background: 193 44% 10%;
-  --foreground: 40 40% 95%;
-  --border: 193 30% 20%;
-  --card: 193 40% 13%;
-  --card-foreground: 40 40% 95%;
-  --card-border: 193 30% 25%;
-  
-  --primary: 193 45% 45%;
-  --primary-foreground: 193 44% 10%;
-  
-  --secondary: 15 50% 60%;
-  --secondary-foreground: 193 44% 10%;
-  
-  --muted: 193 30% 20%;
-  --muted-foreground: 40 20% 70%;
-  
-  --accent: 193 30% 20%;
-  --accent-foreground: 40 40% 95%;
-  
-  --input: 193 30% 25%;
-  --ring: 15 50% 60%;
+  --background: 270 30% 8%;
+  --foreground: 270 20% 95%;
+  --border: 270 20% 20%;
+  --card: 270 25% 11%;
+  --card-foreground: 270 20% 95%;
+  --card-border: 270 20% 22%;
+
+  --primary: 270 55% 58%;
+  --primary-foreground: 270 30% 8%;
+
+  --secondary: 43 70% 55%;
+  --secondary-foreground: 43 20% 10%;
+
+  --muted: 270 20% 18%;
+  --muted-foreground: 270 15% 65%;
+
+  --accent: 270 20% 18%;
+  --accent-foreground: 270 20% 95%;
+
+  --input: 270 20% 22%;
+  --ring: 43 70% 55%;
 }
 
 @layer base {

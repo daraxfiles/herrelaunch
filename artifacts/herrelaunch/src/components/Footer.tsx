@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "wouter";
 import { Mail, Globe } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const footerLinks = [
   { href: "/about", label: "About Us" },
@@ -12,10 +13,7 @@ const footerLinks = [
 
 export function Footer() {
   const Logo = () => (
-    <div className="font-serif font-bold text-xl tracking-tight flex items-center">
-      <span className="text-secondary">Her</span>
-      <span className="text-primary">Relaunch</span>
-    </div>
+    <img src={logoImg} alt="HerRelaunch LLC" className="h-14 w-auto object-contain" />
   );
 
   return (

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo.png";
 
 const navLinks = [
   { href: "/about", label: "About Us" },
@@ -29,10 +30,7 @@ export function Nav() {
   }, [location]);
 
   const Logo = () => (
-    <div className="font-serif font-bold text-2xl md:text-3xl tracking-tight flex items-center">
-      <span className="text-secondary">Her</span>
-      <span className="text-primary">Relaunch</span>
-    </div>
+    <img src={logoImg} alt="HerRelaunch LLC" className="h-12 md:h-14 w-auto object-contain" />
   );
 
   return (
