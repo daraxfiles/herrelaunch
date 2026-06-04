@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { BookOpen, MessageSquare, Users, Star, CheckCircle2 } from "lucide-react";
 import heroImg from "@/assets/hero.png";
-import communityImg from "@/assets/community.png";
+import communityImg from "@/assets/community2.jpg";
 import { Button } from "@/components/ui/button";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
 
