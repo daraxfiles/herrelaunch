@@ -120,8 +120,8 @@ export default function Programs() {
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
               >
                 <div className="rounded-3xl border border-border/50 bg-card overflow-hidden">
-                  <div className="h-56 overflow-hidden relative">
-                    <img src={workshopImg} alt="Women in workshop" className="w-full h-full object-cover" />
+                  <div className="h-72 overflow-hidden relative">
+                    <img src={workshopImg} alt="Women in workshop" className="w-full h-full object-cover object-top" />
                     <div className="absolute inset-0 bg-gradient-to-t from-card/80 to-transparent" />
                   </div>
                   <div className="p-8 md:p-10">
