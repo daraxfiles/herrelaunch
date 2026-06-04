@@ -18,10 +18,10 @@ export function Nav() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/98 backdrop-blur-md border-b border-border shadow-sm">
-        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between h-[72px] md:h-[88px]">
+        <div className="container mx-auto px-6 md:px-12 flex items-center justify-between h-[84px] md:h-[100px]">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <img src={logoImg} alt="HerRelaunch LLC" className="h-12 md:h-14 w-auto object-contain" />
+            <img src={logoImg} alt="HerRelaunch LLC" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav */}
