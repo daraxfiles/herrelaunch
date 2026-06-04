@@ -102,7 +102,7 @@ export default function About() {
                 Tenured Associate Professor, Berea College &nbsp;·&nbsp; Military Spouse
               </motion.p>
               <motion.p variants={fadeInUp} className="text-foreground/70 leading-relaxed text-lg max-w-2xl">
-                HerRelaunch LLC was founded by Mary-Reginald Anibueze, whose dual life as a tenured academic and military spouse gave her a firsthand understanding of the unique confidence challenges women face when navigating transitions. She built HerRelaunch to create the space she once needed herself — and to make sure no woman has to navigate that journey alone.
+                HerRelaunch LLC was founded to create a supportive space where women can rebuild confidence, navigate transitions, and step forward with renewed clarity and purpose. It exists to provide encouragement, practical guidance, and community so that no woman has to face that journey alone.
               </motion.p>
             </motion.div>
           </div>
