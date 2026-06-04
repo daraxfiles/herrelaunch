@@ -93,14 +93,11 @@ export default function About() {
             >
               <motion.div variants={fadeInUp} className="w-12 h-1 bg-secondary rounded-full mb-8" />
               <motion.span variants={fadeInUp} className="text-secondary font-semibold tracking-widest uppercase text-xs mb-4 block">
-                Founded By
+                Our Story
               </motion.span>
-              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground mb-4 leading-tight">
-                Mary-Reginald Anibueze
+              <motion.h2 variants={fadeInUp} className="text-3xl md:text-4xl font-serif text-foreground mb-6 leading-tight">
+                Why HerRelaunch
               </motion.h2>
-              <motion.p variants={fadeInUp} className="text-foreground/60 text-base mb-6 font-medium">
-                Tenured Associate Professor, Berea College &nbsp;·&nbsp; Military Spouse
-              </motion.p>
               <motion.p variants={fadeInUp} className="text-foreground/70 leading-relaxed text-lg max-w-2xl">
                 HerRelaunch LLC was founded to create a supportive space where women can rebuild confidence, navigate transitions, and step forward with renewed clarity and purpose. It exists to provide encouragement, practical guidance, and community so that no woman has to face that journey alone.
               </motion.p>
