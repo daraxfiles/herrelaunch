@@ -4,7 +4,7 @@ import { CheckCircle2, Calendar, Clock, Users, Wifi, DollarSign, Video } from "l
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
-import workshopImg from "@/assets/workshop.png";
+import workshopImg from "@/assets/workshop2.jpg";
 import communityImg from "@/assets/community.png";
 
 const programDetails = [
