@@ -80,7 +80,7 @@ export default function GetInvolved() {
                 There is a place for you here.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
-                Whether you are a woman ready to grow, a leader ready to give back, or an organization ready to invest in women — you belong in this community.
+                Whether you are a woman ready to grow, a leader ready to give back, or an organization ready to invest in women, you belong in this community.
               </motion.p>
             </motion.div>
           </div>

@@ -69,7 +69,7 @@ export default function Contact() {
                 We would love to hear from you.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
-                Whether you have a question about our programs, want to partner with us, or just want to say hello — reach out. We read every message.
+                Whether you have a question about our programs, want to partner with us, or just want to say hello, reach out. We read every message.
               </motion.p>
             </motion.div>
           </div>
@@ -122,7 +122,7 @@ export default function Contact() {
 
                 <motion.div variants={fadeInUp} className="mt-10 rounded-2xl bg-accent/30 border border-accent p-6">
                   <p className="text-foreground/70 leading-relaxed text-sm">
-                    HerRelaunch LLC is a fully online, global program. We serve women in every time zone — our workshops are designed to be accessible no matter where you are in the world.
+                    HerRelaunch LLC is a fully online, global program. We serve women in every time zone and our workshops are designed to be accessible no matter where you are in the world.
                   </p>
                 </motion.div>
               </motion.div>

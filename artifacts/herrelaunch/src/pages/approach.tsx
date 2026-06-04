@@ -13,17 +13,17 @@ const steps = [
   {
     number: "02",
     title: "Join a Live Online Cohort",
-    desc: "Accepted participants are placed into a live online cohort — a small, intentional group that meets together for six weeks via Zoom.",
+    desc: "Accepted participants are placed into a live online cohort: a small, intentional group that meets together for six weeks via Zoom.",
   },
   {
     number: "03",
     title: "Engage in Guided Workshops",
-    desc: "Each workshop includes structured reflection, guided discussion, and concrete action steps — designed to build on the session before.",
+    desc: "Each workshop includes structured reflection, guided discussion, and concrete action steps, designed to build on the session before.",
   },
   {
     number: "04",
     title: "Leave With a Relaunch Plan",
-    desc: "Participants leave with practical tools and a personalized relaunch plan — ready to speak up, lead, and step boldly into their next chapter.",
+    desc: "Participants leave with practical tools and a personalized relaunch plan, ready to speak up, lead, and step boldly into their next chapter.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Approach() {
                 Simple steps. Real transformation.
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-xl text-primary-foreground/80 leading-relaxed max-w-2xl">
-                Rebuilding confidence isn't about becoming someone new. It's about remembering who you already are — and giving you the tools to act on it.
+                Rebuilding confidence isn't about becoming someone new. It's about remembering who you already are, and giving you the tools to act on it.
               </motion.p>
             </motion.div>
           </div>

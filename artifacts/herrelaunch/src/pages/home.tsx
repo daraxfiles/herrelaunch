@@ -21,7 +21,7 @@ const offerings = [
   {
     icon: Users,
     title: "Leadership Development",
-    desc: "Practical skills that translate directly into life, work, and service — starting now.",
+    desc: "Practical skills that translate directly into life, work, and service, starting now.",
   },
 ];
 
@@ -223,7 +223,7 @@ export default function Home() {
                 Your next chapter starts here.
               </motion.h2>
               <motion.p variants={fadeInUp} className="text-primary-foreground/75 text-lg mb-10 leading-relaxed">
-                Join the interest list, request a workshop, or inquire about support. Everything is free — because every woman deserves the tools to lead.
+                Join the interest list, request a workshop, or inquire about support. Everything is free because every woman deserves the tools to lead.
               </motion.p>
               <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/get-involved">

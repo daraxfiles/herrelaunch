@@ -82,7 +82,7 @@ export default function Programs() {
                 variants={staggerContainer}
               >
                 <motion.p variants={fadeInUp} className="text-lg text-foreground/70 leading-relaxed mb-10">
-                  The Confidence Workshop Series is HerRelaunch's core offering — a structured, live online program that guides women through a transformative journey of self-discovery, skill-building, and bold action.
+                  The Confidence Workshop Series is HerRelaunch's core offering: a structured, live online program that guides women through a transformative journey of self-discovery, skill-building, and bold action.
                 </motion.p>
 
                 <div className="grid sm:grid-cols-2 gap-4 mb-10">
@@ -197,7 +197,7 @@ export default function Programs() {
               <motion.div variants={fadeInUp}>
                 <Link href="/get-involved">
                   <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 py-6 text-base h-auto transition-all hover:scale-105">
-                    Apply Now — It's Free
+                    Apply Now. It's Free
                   </Button>
                 </Link>
               </motion.div>

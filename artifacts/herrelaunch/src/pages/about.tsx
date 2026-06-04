@@ -7,11 +7,11 @@ import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTra
 const pillars = [
   {
     title: "Education",
-    body: "We ground every workshop in evidence-based frameworks for confidence-building and leadership development — designed to educate, not just inspire.",
+    body: "We ground every workshop in evidence-based frameworks for confidence-building and leadership development, designed to educate, not just inspire.",
   },
   {
     title: "Self-Advocacy",
-    body: "We equip women with the language, posture, and clarity to speak up for themselves — in rooms that have too often overlooked them.",
+    body: "We equip women with the language, posture, and clarity to speak up for themselves, in rooms that have too often overlooked them.",
   },
   {
     title: "Leadership Development",
@@ -74,7 +74,7 @@ export default function About() {
                   HerRelaunch LLC is a women-centered online initiative founded to help women rebuild confidence and step into leadership with clarity and courage. The program is grounded in education, self-advocacy, and practical leadership development.
                 </p>
                 <p>
-                  We are designed for women worldwide who are ready to speak up, lead, and relaunch their next chapter — built around free access so cost is never a barrier to growth.
+                  We are designed for women worldwide who are ready to speak up, lead, and relaunch their next chapter, built around free access so cost is never a barrier to growth.
                 </p>
               </motion.div>
             </motion.div>
