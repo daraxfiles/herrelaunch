@@ -195,11 +195,11 @@ export default function Programs() {
                 Spaces are limited to ensure an intimate, supportive environment for every participant.
               </motion.p>
               <motion.div variants={fadeInUp}>
-                <Link href="/get-involved">
-                  <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 py-6 text-base h-auto transition-all hover:scale-105">
+                <Button asChild size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 py-6 text-base h-auto transition-all hover:scale-105">
+                  <a href="https://forms.gle/8uP4F3G2VHRSt4PL6" target="_blank" rel="noopener noreferrer">
                     Apply Now. It's Free
-                  </Button>
-                </Link>
+                  </a>
+                </Button>
               </motion.div>
             </motion.div>
           </div>
