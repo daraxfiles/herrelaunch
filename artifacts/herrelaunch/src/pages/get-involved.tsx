@@ -1,11 +1,9 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Users, Mic, Heart, Building2, ChevronRight } from "lucide-react";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
+
+const CONTACT_FORM_URL = "https://forms.gle/8uP4F3G2VHRSt4PL6";
 
 const options = [
   {
@@ -39,24 +37,6 @@ const options = [
 ];
 
 export default function GetInvolved() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [selected, setSelected] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Received",
-        description: "Thank you for reaching out. We will be in touch with you soon.",
-      });
-      (e.target as HTMLFormElement).reset();
-      setSelected("");
-    }, 1500);
-  };
-
   return (
     <PageTransition>
       <div className="flex flex-col min-h-screen">
@@ -121,25 +101,24 @@ export default function GetInvolved() {
                   </div>
                   <h3 className="text-2xl font-serif text-foreground mb-3">{opt.title}</h3>
                   <p className="text-foreground/70 leading-relaxed mb-6">{opt.description}</p>
-                  <button
-                    onClick={() => {
-                      setSelected(opt.title);
-                      document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
-                    }}
+                  <a
+                    href={CONTACT_FORM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${
                       opt.color === "secondary" ? "text-secondary hover:text-secondary/80" : "text-primary hover:text-primary/80"
                     }`}
                   >
                     {opt.cta} <ChevronRight className="h-4 w-4" />
-                  </button>
+                  </a>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section id="contact-form" className="py-24 md:py-32 bg-accent/20">
+        {/* CTA Section */}
+        <section className="py-24 md:py-32 bg-accent/20">
           <div className="container mx-auto px-6 md:px-12 max-w-2xl">
             <motion.div
               initial="hidden"
@@ -157,50 +136,17 @@ export default function GetInvolved() {
                 Tell us a little about yourself and how you want to get involved. We will be in touch.
               </motion.p>
 
-              <motion.form variants={fadeInUp} onSubmit={handleSubmit} className="space-y-6 bg-card rounded-3xl border border-border/50 p-8 md:p-10">
-                <div className="grid sm:grid-cols-2 gap-5">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">Full Name</Label>
-                    <Input id="name" required placeholder="Your name" className="bg-background border-border/50 focus-visible:ring-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="email">Email Address</Label>
-                    <Input id="email" type="email" required placeholder="you@example.com" className="bg-background border-border/50 focus-visible:ring-secondary" />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="interest">How would you like to get involved?</Label>
-                  <select
-                    id="interest"
-                    value={selected}
-                    onChange={e => setSelected(e.target.value)}
-                    className="flex h-10 w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
-                  >
-                    <option value="">Select an option</option>
-                    {options.map(o => <option key={o.title} value={o.title}>{o.title}</option>)}
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <Label htmlFor="message">Tell us more</Label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    placeholder="Share a little about your background and what draws you to HerRelaunch..."
-                    className="flex w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 resize-none"
-                  />
-                </div>
-
+              <motion.div variants={fadeInUp}>
                 <Button
-                  type="submit"
+                  asChild
                   size="lg"
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-6 text-base transition-all"
-                  disabled={isSubmitting}
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl px-10 py-6 text-base transition-all"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer">
+                    Open Contact Form
+                  </a>
                 </Button>
-              </motion.form>
+              </motion.div>
             </motion.div>
           </div>
         </section>
