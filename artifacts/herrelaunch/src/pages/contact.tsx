@@ -1,11 +1,7 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Globe, MapPin } from "lucide-react";
 import { PageTransition, fadeInUp, staggerContainer } from "@/components/PageTransition";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useToast } from "@/hooks/use-toast";
 
 const contactDetails = [
   {
@@ -28,23 +24,9 @@ const contactDetails = [
   },
 ];
 
+const CONTACT_FORM_URL = "https://forms.gle/8uP4F3G2VHRSt4PL6";
+
 export default function Contact() {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      toast({
-        title: "Message Sent",
-        description: "Thank you for reaching out. We will get back to you soon.",
-      });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
-  };
-
   return (
     <PageTransition>
       <div className="flex flex-col min-h-screen">
@@ -75,7 +57,7 @@ export default function Contact() {
           </div>
         </section>
 
-        {/* Contact Info + Form */}
+        {/* Contact Info + CTA */}
         <section className="py-24 md:py-32 bg-background">
           <div className="container mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-5xl mx-auto items-start">
@@ -127,48 +109,34 @@ export default function Contact() {
                 </motion.div>
               </motion.div>
 
-              {/* Contact Form */}
+              {/* Send Message CTA */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                className="rounded-3xl border border-border/50 bg-card p-8 md:p-10 flex flex-col justify-center items-center text-center gap-6"
               >
-                <form onSubmit={handleSubmit} className="space-y-5 rounded-3xl border border-border/50 bg-card p-8 md:p-10">
-                  <h3 className="text-2xl font-serif text-foreground mb-6">Send a message</h3>
-
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-name">Full Name</Label>
-                    <Input id="contact-name" required placeholder="Your name" className="bg-background border-border/50 focus-visible:ring-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-email">Email Address</Label>
-                    <Input id="contact-email" type="email" required placeholder="you@example.com" className="bg-background border-border/50 focus-visible:ring-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-subject">Subject</Label>
-                    <Input id="contact-subject" placeholder="What is this about?" className="bg-background border-border/50 focus-visible:ring-secondary" />
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="contact-message">Message</Label>
-                    <textarea
-                      id="contact-message"
-                      required
-                      rows={5}
-                      placeholder="Your message..."
-                      className="flex w-full rounded-md border border-border/50 bg-background px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2 resize-none"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-6 text-base transition-all"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
+                <div className="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center">
+                  <Mail className="h-8 w-8 text-secondary" />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-serif text-foreground mb-3">Send a Message</h3>
+                  <p className="text-foreground/60 leading-relaxed">
+                    Fill out our quick contact form and we will get back to you as soon as possible.
+                  </p>
+                </div>
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl py-6 text-base transition-all"
+                >
+                  <a href={CONTACT_FORM_URL} target="_blank" rel="noopener noreferrer">
+                    Open Contact Form
+                  </a>
+                </Button>
               </motion.div>
+
             </div>
           </div>
         </section>
