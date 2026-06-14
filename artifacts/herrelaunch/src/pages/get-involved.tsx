@@ -36,7 +36,7 @@ const options = [
     description: "Request a workshop for your members or audience. We partner with organizations who believe in empowering women through education.",
     cta: "Request a Workshop",
     color: "secondary",
-    href: CONTACT_FORM_URL,
+    href: "mailto:herrelaunchllc@gmail.com",
   },
 ];
 
