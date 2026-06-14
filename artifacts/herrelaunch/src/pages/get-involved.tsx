@@ -12,6 +12,7 @@ const options = [
     description: "Apply for the next free workshop cycle and begin rebuilding your confidence alongside a supportive community of women.",
     cta: "Apply Now",
     color: "secondary",
+    href: CONTACT_FORM_URL,
   },
   {
     icon: Mic,
@@ -19,6 +20,7 @@ const options = [
     description: "Share your expertise on confidence, leadership, or self-advocacy. We welcome women who have walked this path and want to light the way for others.",
     cta: "Express Interest",
     color: "primary",
+    href: "mailto:herrelaunchllc@gmail.com",
   },
   {
     icon: Heart,
@@ -26,6 +28,7 @@ const options = [
     description: "Ask about seed funding or in-kind support. Your partnership helps us keep every program free and reach more women worldwide.",
     cta: "Inquire About Support",
     color: "primary",
+    href: "mailto:herrelaunchllc@gmail.com",
   },
   {
     icon: Building2,
@@ -33,6 +36,7 @@ const options = [
     description: "Request a workshop for your members or audience. We partner with organizations who believe in empowering women through education.",
     cta: "Request a Workshop",
     color: "secondary",
+    href: CONTACT_FORM_URL,
   },
 ];
 
@@ -102,7 +106,7 @@ export default function GetInvolved() {
                   <h3 className="text-2xl font-serif text-foreground mb-3">{opt.title}</h3>
                   <p className="text-foreground/70 leading-relaxed mb-6">{opt.description}</p>
                   <a
-                    href={CONTACT_FORM_URL}
+                    href={opt.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center gap-2 text-sm font-semibold transition-colors ${
